@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Conec-TO</string>
+
+    <string name="dialog_permission_title">Conceder Permisos</string>
+    <string name="dialog_permission_message">Esta aplicación necesita permiso para usar esta función. Puedes otorgarlos en la configuración de la aplicación.</string>
+    <string name="go_to_settings">Ir a Configuracion</string>
+    <string name="lbl_set_profile_photo">Foto de perfil</string>
+    <string name="lbl_take_camera_picture">Tomar una foto</string>
+    <string name="lbl_choose_from_gallery">Seleccionar de la galeria</string>
+    <string name="toast_image_intent_null">Image picker option is missing!</string>
+
+    <string name="default_web">366588417718-il1ol96thmdh9147i03esq0opb0tt70m.apps.googleusercontent.com</string>
+</resources>

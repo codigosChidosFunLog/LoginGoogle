@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context=".RegisterUserActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_gravity="center"/>
+
+    <RelativeLayout
+        android:layout_width="@dimen/profile_width"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="@dimen/profile_width"
+            android:layout_height="@dimen/profile_width"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/perfil"
+            android:onClick="loadImage"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"/>
+        
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="@dimen/plus_width"
+            android:layout_height="@dimen/plus_width"
+            android:layout_alignBottom="@id/imgProfile"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/plus"
+            android:onClick="loadImage"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="1dp"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:elevation="5dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/StyledTilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_nameuser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombre completo"
+                        android:inputType="textPersonName"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxLines="1"
+                        android:maxLength="30"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/txt_color"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/StyledTilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombre de usuario"
+                        android:inputType="textPersonName"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxLines="1"
+                        android:maxLength="30"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/txt_color"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/StyledTilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Telefono"
+                        android:inputType="phone"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxLines="1"
+                        android:maxLength="30"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/txt_color"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selecciona tipo de usuario"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="25dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="start"/>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="@color/colorAccent"
+                    android:padding="10dp"
+                    android:entries="@array/list"/>
+
+                <LinearLayout
+                    android:id="@+id/container_vendedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/roboto_black"
+                        android:gravity="center"
+                        android:text="Datos del negocio"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/StyledTilEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:textColor="@color/blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_name_negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Nombre Negocio"
+                            android:inputType="text"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:paddingTop="10dp"
+                            android:textColor="@color/txt_color"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/StyledTilEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:textColor="@color/blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_desc_negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Descripcion del negocio"
+                            android:inputType="textMultiLine"
+                            android:lines="4"
+                            android:maxLength="1000"
+                            android:maxLines="4"
+                            android:paddingTop="10dp"
+                            android:textColor="@color/txt_color"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Horario de atencion"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="25dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:layout_gravity="start"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:weightSum="2.4">
+
+                        <Button
+                            android:id="@+id/et_horaini"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="time"
+                            android:onClick="horaInicio"
+                            android:text="09:00"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text=" a "
+                            android:fontFamily="@font/roboto_light"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:layout_weight=".4"/>
+
+                        <Button
+                            android:id="@+id/et_horafin"
+                            android:layout_width="0dp"
+                            android:inputType="time"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="horaFin"
+                            android:text="09:00"/>
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar ubicacion del negocio"
+                        android:onClick="selectUbicacion"
+                        android:background="@color/white"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_marginBottom="10dp"
+                        android:textAllCaps="false"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_blue_rect"
+                    android:text="Continuar"
+                    android:onClick="go"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_regular"
+                    android:layout_marginBottom="10dp"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

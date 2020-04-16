@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="StyledTilEditTextTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="android:textColorPrimary">@color/txt_color</item>
+    </style>
+
+    <style name="StyledTilEditText">
+        <item name="android:theme">@style/StyledTilEditTextTheme</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+//////////////////////////////////////
+    <style name="AppTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.ActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
